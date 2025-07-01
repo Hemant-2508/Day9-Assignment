@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    setAlarm("21:05", "Alarm");
+
+    function setAlarm(time, message) {
+    
+    const now = new Date();
+    const alarmTime = new Date(now.toDateString() + ' ' + time);
+
+
+    const timeUntilAlarm = alarmTime - now;
+
+    if (timeUntilAlarm > 0) {
+        setTimeout(function () {
+            alert("Alarm: " + message);
+        }, timeUntilAlarm);
+        console.log("Alarm set for " + time);
+    } else {
+        console.log("That time is already past today.");
+    }
+
+}
+
+    </script>
+</body>
+</html>
