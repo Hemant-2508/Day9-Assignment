@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reminder</title>
 </head>
 <body>
-    <script>
 
-    setAlarm("21:05", "Alarm");
+  <script>
+    scheduleAlert("21:05", "Reminder: Alarm!");
 
-    function setAlarm(time, message) {
-    
-    const now = new Date();
-    const alarmTime = new Date(now.toDateString() + ' ' + time);
+    function scheduleAlert(alertTime, alertMessage) {
+      const currentTime = new Date();
+      const alertDateTime = new Date(currentTime.toDateString() + ' ' + alertTime);
 
+      const timeDifference = alertDateTime - currentTime;
 
-    const timeUntilAlarm = alarmTime - now;
-
-    if (timeUntilAlarm > 0) {
-        setTimeout(function () {
-            alert("Alarm: " + message);
-        }, timeUntilAlarm);
-        console.log("Alarm set for " + time);
-    } else {
-        console.log("That time is already past today.");
+      if (timeDifference > 0) {
+        setTimeout(() => {
+          alert(`Reminder: ${alertMessage}`);
+        }, timeDifference);
+        console.log(`Reminder scheduled for ${alertTime}`);
+      } else {
+        console.log("The selected time has already passed today.");
+      }
     }
+  </script>
 
-}
-
-    </script>
 </body>
 </html>
