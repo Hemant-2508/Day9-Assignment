@@ -3,20 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Async Lookup</title>
 </head>
 <body>
+
   <script>
-      function searchBook(bookName, callback) {
-        setTimeout(function() {
-          callback("Found book: " + bookName)
-        }, 2000)
-      }
-      searchBook("Harry Potter", function(result) {
-          console.log(result)
-        })
+    function locateBook(title, onComplete) {
+      setTimeout(() => {
+        onComplete(`Located: ${title}`);
+      }, 2000);
+    }
 
-
+    locateBook("Harry Potter", response => {
+      console.log(response);
+    });
   </script>
+
 </body>
 </html>
