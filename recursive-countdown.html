@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Launch Countdown</title>
 </head>
 <body>
+
   <script>
+    initiateCountdown(5);
 
-  countdown(5);
-
-    function countdown(n) {
-      if (n > 0) {
-        console.log(n)
-        setTimeout(function() {
-          countdown(n - 1)
-        }, 1000)
+    function initiateCountdown(start) {
+      if (start > 0) {
+        console.log(start);
+        setTimeout(() => {
+          initiateCountdown(start - 1);
+        }, 1000);
       } else {
-        console.log("Blast Off!")
+        console.log("Lift-off!");
       }
-  }
-
+    }
   </script>
+
 </body>
 </html>
