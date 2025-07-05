@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Math Executor</title>
 </head>
 <body>
+
   <script>
-
-    function calculate(a, b, operation) {
-      return operation(a, b)
+    function executeOperation(val1, val2, handler) {
+      return handler(val1, val2);
     }
 
-    function add(x, y) {
-      return x + y
+    function sumValues(num1, num2) {
+      return num1 + num2;
     }
 
-    let result = calculate(5, 3, add)
-    console.log(result)
-
+    const output = executeOperation(5, 3, sumValues);
+    console.log(output);
   </script>
+
 </body>
 </html>
