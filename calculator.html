@@ -2,22 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Math Executor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compute Task</title>
 </head>
 <body>
 
   <script>
-    function executeOperation(val1, val2, handler) {
-      return handler(val1, val2);
-    }
+    const process = (a, b, func) => func(a, b);
 
-    function sumValues(num1, num2) {
-      return num1 + num2;
-    }
+    const add = (x, y) => x + y;
 
-    const output = executeOperation(5, 3, sumValues);
-    console.log(output);
+    const result = process(5, 3, add);
+    console.log(result);
   </script>
 
 </body>
