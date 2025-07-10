@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Async Lookup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book Search</title>
 </head>
 <body>
 
   <script>
-    function locateBook(title, onComplete) {
-      setTimeout(() => {
-        onComplete(`Located: ${title}`);
+    const fetchTitle = function(name, done) {
+      setTimeout(function() {
+        done("Book located: " + name);
       }, 2000);
-    }
+    };
 
-    locateBook("Harry Potter", response => {
-      console.log(response);
+    fetchTitle("Harry Potter", function(msg) {
+      console.log(msg);
     });
   </script>
 
