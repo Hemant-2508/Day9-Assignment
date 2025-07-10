@@ -3,23 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Launch Countdown</title>
+  <title>Countdown Begin</title>
 </head>
 <body>
 
   <script>
-    initiateCountdown(5);
+    function countdown(val) {
+      console.log(val > 0 ? val : "Lift-off!");
 
-    function initiateCountdown(start) {
-      if (start > 0) {
-        console.log(start);
-        setTimeout(() => {
-          initiateCountdown(start - 1);
+      if (val > 0) {
+        setTimeout(function() {
+          countdown(val - 1);
         }, 1000);
-      } else {
-        console.log("Lift-off!");
       }
     }
+
+    countdown(5);
   </script>
 
 </body>
