@@ -3,28 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reminder</title>
+  <title>Alert Timer</title>
 </head>
 <body>
 
   <script>
-    scheduleAlert("21:05", "Reminder: Alarm!");
+    function setReminder(timeStr, message) {
+      const now = new Date();
+      const target = new Date(now.toDateString() + ' ' + timeStr);
 
-    function scheduleAlert(alertTime, alertMessage) {
-      const currentTime = new Date();
-      const alertDateTime = new Date(currentTime.toDateString() + ' ' + alertTime);
+      const delay = target - now;
 
-      const timeDifference = alertDateTime - currentTime;
-
-      if (timeDifference > 0) {
-        setTimeout(() => {
-          alert(`Reminder: ${alertMessage}`);
-        }, timeDifference);
-        console.log(`Reminder scheduled for ${alertTime}`);
+      if (delay > 0) {
+        setTimeout(function() {
+          alert("Reminder: " + message);
+        }, delay);
+        console.log("Alert set for " + timeStr);
       } else {
-        console.log("The selected time has already passed today.");
+        console.log("Time entered is already past.");
       }
     }
+
+    setReminder("21:05", "Reminder: Alarm!");
   </script>
 
 </body>
