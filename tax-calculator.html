@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Tax Summary</title>
 </head>
 <body>
   <script>
-    let total = taxCalculator(100, 18)
-console.log(total)
-function taxCalculator(amount, tax) {
-  return amount + (amount * tax / 100)
-}
+    function calculateTotalPrice(base, rate) {
+      return base + (base * rate / 100);
+    }
 
+    const finalAmount = calculateTotalPrice(100, 18);
+    console.log(finalAmount);
   </script>
 </body>
 </html>
