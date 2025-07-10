@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Number Check</title>
+  <title>Even Validator</title>
 </head>
 <body>
 
   <script>
-    function checkEven(num) {
-      if (num === 0) return true;
-      if (num === 1) return false;
-      return checkEven(num - 2);
+    function isEven(n) {
+      if (n === 0) return true;
+      if (n === 1) return false;
+      return isEven(n - 2);
     }
 
-    console.log(checkEven(4));  
-    console.log(checkEven(7));  
+    console.log(isEven(4));
+    console.log(isEven(7));
   </script>
 
 </body>
